@@ -16,7 +16,7 @@ The system is designed as a shared physical library. Members pick up and return 
 - Search and filter games by category, difficulty, and player count
 - View detailed information about each game
 - Create an account and sign in securely
-- Request free game loans
+- Request free game loans (max of 3 active loans)
 - View current loans, pending requests, and loan history
 - Track a loan through multiple statuses
 - Write, edit, and delete personal reviews
@@ -70,7 +70,9 @@ Administrators can:
 
 ### Loan Workflow
 
+```text
 Available → Requested → Approved → Checked Out → Returned → Inspected
+```
 
 Additional statuses may include:
 
@@ -81,7 +83,9 @@ Additional statuses may include:
 
 ### Review Workflow
 
+```text
 Draft → Submitted → Approved → Published
+```
 
 Reviews may be moderated before they become visible to the community.
 
@@ -90,7 +94,7 @@ Reviews may be moderated before they become visible to the community.
 1. A member browses the catalog.
 2. The member opens a game's details page.
 3. The member signs in or creates an account.
-4. The member requests a free loan (max of 2 at the same time).
+4. The member requests a free loan.
 5. Library staff review and approve the request.
 6. The member picks up the game.
 7. Staff record the checkout.
@@ -218,6 +222,7 @@ Important relationships include:
 
 ## Project Structure
 
+```text
 gameshelf/
 ├── controllers/
 ├── db/
@@ -243,6 +248,7 @@ gameshelf/
 ├── package.json
 ├── .env
 └── README.md
+```
 
 ## Development Roadmap
 
