@@ -1,3 +1,11 @@
+### Deployment Journal:
+
+#### Week 9
+Added EJS views and connected them to Express routes. Implemented query-parameter sorting for the game catalog and centralized error handling.
+
+#### Week 8
+Set up the Express development environment by installing Node.js and Nodemon, creating server.js, configuring the server port and environment variables, and adding a route handler for the home page.
+
 # GameShelf
 
 GameShelf is a free, community-centered board game library. Members can discover board games, read community reviews, request loans, and return games after playing them. Library staff manage requests, checkouts, returns, and game condition, while administrators manage the catalog, users, categories, and community content.
