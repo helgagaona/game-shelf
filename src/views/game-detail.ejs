@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<main class="game-page">
+    <div class="game-navigation">
+        <a class="link" href="/games">&larr; Back to Games</a>
+    </div>
+    <article class="game-detail">
+        <div class="game-image">
+            <img src="<%= boardGame.image %>" alt="<%= boardGame.title %>">
+        </div>
+        <div class="game-info">
+            <div class="game-header">
+                <div class="game-tags">
+                    <span class="tag"><%= boardGame.id %></span>
+                    <span class="tag"><%= boardGame.players %></span>
+                    <span class="tag"><%= boardGame.playTime %></span>
+                </div>
+                <h1><%= boardGame.title %></h1>
+                <p class="game-description"><%= boardGame.description %></p>
+            </div>
+            <div class="game-details">
+                <p><strong>Difficulty</strong> <span><%= boardGame.difficulty %></span></p>
+                <p><strong>Category</strong> <span><%= boardGame.category %></span></p>
+                <p><strong>Available</strong> <span><%= boardGame.available %></span></p>
+            </div>
+        </div>
+    </article>
+
+</main>
+<%- include('partials/footer') %>

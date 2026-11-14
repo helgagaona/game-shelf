@@ -1,0 +1,40 @@
+/* base/ holds your CSS reset and bare element styles. These rules use tag selectors (body, a, h1) and set the baseline appearance before any classes are involved. */
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 400 var(--font-size-body) / var(--line-height-body) var(--body);
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: var(--display);
+    line-height: var(--line-height-heading);
+}
+
+h1 {
+    margin: 0;
+    color: var(--gold-hi);
+    font-size: var(--font-size-hero);
+}
+
+h2 {
+    margin: 0 0 var(--space-6);
+    font-size: var(--font-size-heading);
+}
+
+h4 {
+    font-family: var(--display);
+    font-size: var(--font-size-callout-title);
+    line-height: var(--line-height-callout);
+}
+
+h5 {
+    color: var(--gold-hi);
+    font-size: var(--font-size-eyebrow);
+    letter-spacing: var(--letter-spacing-eyebrow);
+    text-transform: uppercase;
+}

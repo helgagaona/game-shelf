@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<body>
+  <main class="spill-container">
+    <p class="error-code">Something Went Wrong</p>
+    <h2>A game box tipped over</h2>
+    <p>
+      <%= typeof message !== 'undefined' && message
+        ? message
+        : "A box slipped off the shelf and scattered its pieces. Please try again in a moment." %>
+    </p>
+
+    <div class="spill" role="img" aria-label="A tipped-over game box with dice and tokens spilled across the table">
+      <div class="box"></div>
+      <span class="die three"></span>
+      <span class="die five"></span>
+      <span class="token a"></span>
+      <span class="die two"></span>
+      <span class="token b"></span>
+      <div class="lid"></div>
+    </div>
+
+    <div class="actions">
+      <a class="primary-btn" href="">Try again</a>
+      <a class="third-btn" href="/">Back to the library</a>
+    </div>
+</main>
+    <div class="development">
+    <% if (NODE_ENV === 'development') { %>
+        <details open>
+            <summary>Error Details (Development Only)</summary>
+            <pre><%= error %></pre>
+            <pre><%= stack %></pre>
+        </details>
+    <% } %>
+    </div>
+<%- include('../partials/footer') %>

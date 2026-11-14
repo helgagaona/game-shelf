@@ -1,0 +1,23 @@
+/* tokens/ holds custom properties. Every design decision that other files reference (colors, spacing, radii, font stacks, shadows) is defined here. */
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Pro:wght@400;600&display=swap");
+
+:root {
+    --page: #0f0a1c;
+    --ink: #eadff5;
+    --rule: #4a3466;
+    --gold: #c99a2e;
+    --gold-hi: #f1d889;
+    --gold-lo: #8a6414;
+    --ink-on-gold: #2a1a08;
+    --gold-wash: rgb(201 154 46 / 6%);
+    --green: #2a1245;
+    --oxblood: #8a1f3d;
+    --oak: #1a0f2b;
+    --moss: #4a3a7a;
+    --card: #1d1230;
+    --accent: #8553ba;
+    --foil: linear-gradient(135deg, var(--gold-hi), var(--gold) 45%, var(--gold-lo)); /* use color transparent, background-clip: text and background: --foil */
+
+    --display: "IM Fell English", "Palatino Linotype", Georgia, serif;
+    --body: "Crimson Pro", Georgia, serif;
+}

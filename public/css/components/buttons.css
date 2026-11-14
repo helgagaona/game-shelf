@@ -1,0 +1,62 @@
+.secondary-btn {
+    text-decoration: none;
+    color: var(--gold-hi);
+    border-bottom: var(--border-width) solid var(--gold);
+    text-underline-offset: var(--space-1);
+    transition: background-color var(--transition-control), border-color var(--transition-control), color var(--transition-control);
+
+     &:hover,
+    &:focus-visible {
+        color: var(--ink);
+    }
+}
+
+.primary-btn {
+    border-radius: var(--radius-control);
+    font-family: var(--display);
+    text-decoration: none;
+    padding: var(--space-button-primary-block) var(--space-button-primary-inline);
+    background: var(--gold);
+    color: var(--ink-on-gold);
+    transition: background-color var(--transition-control), border-color var(--transition-control), color var(--transition-control);
+
+    &:hover,
+    &:focus-visible {
+        border-color: var(--gold-hi);
+        background: var(--gold-hi);
+    }
+}
+
+.third-btn {
+    border-radius: var(--radius-control);
+    border: var(--border-width-control) solid var(--gold-hi);
+    font-family: var(--display);
+    text-decoration: none;
+    padding: var(--space-button-primary-block) var(--space-button-primary-inline);
+    color: var(--gold-hi);
+    transition: background-color var(--transition-control), border-color var(--transition-control), color var(--transition-control);
+
+    &:hover,
+    &:focus-visible {
+        background: var(--gold);
+        color: var(--ink-on-gold);
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: var(--gold-hi);
+    transition: background-color var(--transition-control), border-color var(--transition-control), color var(--transition-control);
+
+    &:hover,
+    &:focus-visible {
+        color: var(--ink);
+    }
+}
+
+.actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-4) var(--space-6);
+    }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= title %> | Gameshelf</title>
+<link href="/css/main.css" rel="stylesheet">
+
+<% if (NODE_ENV.includes('dev')) { %>
+    <script>
+        // Get the current hostname and port from the browser
+        const host = window.location.hostname;
+        const currentPort = window.location.port;
+
+        // Calculate WebSocket port (current port + 1)
+        const wsPort = currentPort ? (parseInt(currentPort) + 1) : 3001;
+
+        // Create WebSocket connection using dynamic hostname and port
+        const ws = new WebSocket(`ws://${host}:${wsPort}`);
+        ws.onclose = () => {
+            setTimeout(() => location.reload(), 2000);
+        };
+    </script>
+<% } %>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-layout">
+    <a class="site-logo" href="/">Gameshelf</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/games" aria-current="page">The catalog</a>
+      <a href="/#how-it-works">How to borrow</a>
+      <a href="/#community">Community</a>
+      <a class="third-btn" href="/games">Join</a>
+    </nav>
+  </div>
+</header>

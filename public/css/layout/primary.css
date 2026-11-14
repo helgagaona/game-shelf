@@ -1,0 +1,19 @@
+/* layout/ holds structural rules for the page skeleton: the overall grid, content widths, header and footer positioning. Layout classes handle composition without caring what component sits inside them. */
+
+main {
+    max-width: var(--content-width-home);
+    padding: var(--space-8) 0 var(--space-16);
+    margin: 0 auto;
+    width: 80%;
+
+    
+}
+
+section {
+    padding: var(--space-10) 0;
+    border-bottom: var(--border-width) solid var(--rule);
+}
+body {
+    background: radial-gradient(ellipse at 50% -10%, rgba(201, 154, 46, 0.2), transparent 55%), var(--page);
+    color: var(--ink);
+}

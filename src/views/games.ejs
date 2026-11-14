@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<main>
+    <div class="sort-options">
+        <span>Sort by: </span>
+        <a href="/games?sort=available" class="<%= currentSort === 'available' ? 'active' : '' %>">Units Available</a>
+        <a href="/games?sort=difficulty" class="<%= currentSort === 'difficulty' ? 'active' : '' %>">Difficulty</a>
+        <a href="/games?sort=category" class="<%= currentSort === 'category' ? 'active' : '' %>">Category</a>
+    </div>
+    <section class="games-list">
+        <% Object.values(boardGames).forEach(boardGame => { %>
+            <div class="game-card">
+                <img src="<%= boardGame.image %>" alt="<%= boardGame.title %>">
+                <div class="game-meta">
+                    <h3><%= boardGame.title %></h3>
+                    <div class="game-tags">
+                        <p class="tag"><%= boardGame.players %></p>
+                        <p class="tag"><%= boardGame.playTime %></p>
+                    </div>
+                    <div class="game-info">
+                        <div>
+                            <span class="game-difficulty"><%= boardGame.difficulty %> ·</span>
+                            <span class="game-category"><%= boardGame.category %></span>
+                        </div>
+                        <p class="game-available"><%= boardGame.available %> available</p>
+                    </div>
+                </div>
+                <a class="link" href="/games/<%= boardGame.id %>">View Game</a>
+            </div>
+        <% }); %>
+    </section>
+</main>
+<%- include('partials/footer') %>
+</body>
+</html>

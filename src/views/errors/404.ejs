@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+<body>
+  <main class="books-container">
+    <p class="error-code">Page Not Found</p>
+    <h2>There’s a gap on the shelf</h2>
+    <p>
+      <%= typeof message !== 'undefined' && message
+        ? message
+        : "The page you were looking for isn’t here." %>
+    </p>
+
+    <div class="shelf" role="img" aria-label="A bookshelf of board games with an empty space where one game should be">
+      <div class="row">
+        <div class="spine b1">Connect 4</div>
+        <div class="spine b2">Catan</div>
+        <div class="spine b3">Pandemic</div>
+
+        <div class="gap">
+          <i class="dust"></i><i class="dust"></i><i class="dust"></i>
+          <span>?</span>
+        </div>
+
+        <div class="spine b4">Clue</div>
+        <div class="spine b5">Scrabble</div>
+        <div class="spine b6">Carcassonne</div>
+      </div>
+    </div>
+    <div class="plank"></div>
+
+    <div class="actions">
+      <a class="primary-btn" href="/">Back to the library</a>
+      <a class="third-btn" href="/catalog">Browse the catalog</a>
+    </div>
+  </main>
+<%- include('../partials/footer') %>

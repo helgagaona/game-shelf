@@ -1,0 +1,56 @@
+/* components/ holds the styled UI pieces: cards, buttons, navigation, forms. Because tokens and base styles do most of the heavy lifting, component files tend to be lightweight. */
+
+.site-header {
+    border-bottom: var(--border-width-header) double var(--gold);
+    padding: var(--space-4) var(--space-5);
+
+    .header-layout {
+        display: flex;
+        max-width: var(--content-width-wide);
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-6);
+        margin: 0 auto;
+    
+        .site-logo {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: var(--font-size-brand);
+            color: var(--gold-hi);
+            text-decoration: none;
+        }
+
+        .site-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-6);
+            align-items: center;
+
+            a:not(.third-btn) {
+                color: var(--ink);
+                text-decoration: none;
+                border-bottom: var(--border-width) dotted var(--gold-lo);
+            }
+
+            a:not(.third-btn):hover,
+            a:not(.third-btn)[aria-current="page"] {
+                border-bottom: var(--border-width) solid var(--gold);
+                color: var(--gold-hi);
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        .header-layout {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: var(--space-3);
+
+            .site-nav {
+                gap: var(--space-3) var(--space-4);
+            }
+        }
+    }
+}

@@ -1,0 +1,337 @@
+.error-code {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  background: var(--foil);
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+/* 404 */
+.books-container {
+  width: 100%;
+  max-width: 40rem;
+  text-align: center;
+
+  h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: var(--gold-hi);
+}
+  /* ---- the empty shelf ---- */
+  .shelf {
+    margin: 2rem 0 0;
+    padding: 1.5rem 1rem 0;
+    background: #0a0614;
+    border: 3px double var(--gold);
+    border-bottom: 0;
+    border-radius: 0.4rem 0.4rem 0 0;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+
+    .row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 3px;
+  
+      .spine {
+        flex: 0 0 auto;
+        width: 2.7rem;
+        border-radius: 0.2rem 0.2rem 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--display);
+        font-size: 0.95rem;
+        color: var(--gold-hi);
+        writing-mode: vertical-rl;
+        padding: 0.7rem 0;
+        border-top: 6px double var(--gold);
+        border-bottom: 6px double var(--gold);
+        transform-origin: bottom right;
+      }
+
+      .b1 {
+        height: 9rem;
+        width: 3rem;
+        background: #1d3f8f;
+        color: #ffd84d;
+        box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.35), inset -3px 0 5px rgba(0, 0, 0, 0.25);
+      }
+
+      .b2 {
+        height: 11rem;
+        width: 3.2rem;
+        background: #8a4b12;
+        color: var(--gold-hi);
+        letter-spacing: 0.08em;
+        box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.35), inset -3px 0 5px rgba(0, 0, 0, 0.25);
+      }
+
+      .b3 {
+        height: 8.5rem;
+        width: 2.6rem;
+        background: #1f5a4a;
+        color: var(--gold-hi);
+        transform: rotate(5deg);
+        box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.35), inset -3px 0 5px rgba(0, 0, 0, 0.25);
+      } /* leans into the gap */
+
+      .b4 {
+        height: 10.5rem;
+        width: 2.8rem;
+        background: var(--oxblood);
+        color: var(--gold-hi);
+        transform-origin: bottom left;
+        transform: rotate(-5deg);
+        box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.35), inset -3px 0 5px rgba(0, 0, 0, 0.25);
+      }
+
+      .b5 {
+        height: 9.5rem;
+        width: 2.9rem;
+        background: #7a4a22;
+        color: #f6e7c1;
+        border-left: 1px solid var(--gold-lo);
+        border-right: 1px solid var(--gold-lo);
+        letter-spacing: 0.1em;
+        box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.35), inset -3px 0 5px rgba(0, 0, 0, 0.25);
+      }
+
+      .b6 {
+        height: 11.5rem;
+        width: 3.1rem;
+        background: #2f5d3a;
+        color: var(--gold-hi);
+        font-size: 0.85rem;
+        box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.35), inset -3px 0 5px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    /* the missing game */
+    .gap {
+      position: relative;
+      flex: 0 0 auto;
+      width: 6.5rem;
+      height: 11rem;
+      margin: 0 0.6rem;
+      border: 2px dashed var(--gold-lo);
+      border-bottom: 0;
+      border-radius: 0.3rem 0.3rem 0 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(201, 154, 46, 0.436), transparent 70%);
+      display: grid;
+      place-items: center;
+      z-index: 1;
+
+      .dust {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--gold-hi);
+        opacity: 0.5;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .dust:nth-of-type(1) {
+        left: 20%;
+        top: 30%;
+      }
+
+      .dust:nth-of-type(2) {
+        left: 70%;
+        top: 55%;
+        animation-delay: -2s;
+      }
+
+      .dust:nth-of-type(3) {
+        left: 45%;
+        top: 75%;
+        animation-delay: -4s;
+      }
+
+    }
+    }
+    .gap span {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 3.5rem;
+      color: var(--gold-lo);
+      opacity: 0.7;
+    }
+
+  .plank {
+    height: 1.4rem;
+    background: linear-gradient(var(--oak), #170c26);
+    border: 3px double var(--gold);
+    border-top: 2px solid var(--gold-lo);
+    margin-bottom: 30px;
+  }
+  .actions {
+    justify-content: center;
+  }
+}
+
+@keyframes float {
+    50% {
+    transform: translateY(-10px);
+    opacity: 0.15;
+  }
+}
+
+/* 500 */
+.spill-container {
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: var(--gold-hi);
+}
+
+  /* ---- the spilled game box ---- */
+  .spill {
+    position: relative;
+    width: min(100%, 26rem);
+    height: 12rem;
+    margin: 2rem auto 0;
+    border-bottom: 3px double var(--gold);
+
+    .box {
+      position: absolute;
+      left: 6%;
+      bottom: 0;
+      width: 11rem;
+      height: 5rem;
+      background: var(--oxblood);
+      border: 2px solid var(--gold-lo);
+      border-radius: 0.25rem;
+      transform: rotate(-9deg);
+      transform-origin: bottom left;
+
+      /* the open mouth, where the pieces came out */
+      &::before {
+        content: "";
+        position: absolute;
+        right: -2px;
+        top: 0.3rem;
+        bottom: 0.3rem;
+        width: 1.3rem;
+        background: var(--oak);
+        border-left: 2px solid var(--gold-lo);
+      }
+
+      /* gold band across the box */
+      &::after {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        right: 2.5rem;
+        top: 50%;
+        height: 0.9rem;
+        margin-top: -0.45rem;
+        border-block: 2px double var(--gold);
+      }
+    }
+
+    .lid {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 4.5rem;
+      height: 1.3rem;
+      background: var(--moss);
+      border: 2px solid var(--gold-lo);
+      border-radius: 0.25rem;
+      transform: rotate(-4deg);
+    }
+
+    .die {
+      position: absolute;
+      width: 2.6rem;
+      height: 2.6rem;
+      background-color: var(--ink);
+      border-radius: 0.4rem;
+      box-shadow: inset -2px -2px 0 rgb(0 0 0 / 20%);
+
+      &.five {
+        left: 52%;
+        bottom: 0;
+        transform: rotate(12deg);
+        background-image:
+          radial-gradient(circle at 25% 25%, var(--page) 0.17rem, transparent 0.2rem),
+          radial-gradient(circle at 75% 25%, var(--page) 0.17rem, transparent 0.2rem),
+          radial-gradient(circle at 50% 50%, var(--page) 0.17rem, transparent 0.2rem),
+          radial-gradient(circle at 25% 75%, var(--page) 0.17rem, transparent 0.2rem),
+          radial-gradient(circle at 75% 75%, var(--page) 0.17rem, transparent 0.2rem);
+      }
+
+      &.two {
+        left: 66%;
+        bottom: 0;
+        transform: rotate(-18deg);
+        background-image:
+          radial-gradient(circle at 25% 25%, var(--page) 0.17rem, transparent 0.2rem),
+          radial-gradient(circle at 75% 75%, var(--page) 0.17rem, transparent 0.2rem);
+      }
+
+      /* still tumbling in mid-air */
+      &.three {
+        left: 46%;
+        bottom: 3rem;
+        transform: rotate(28deg);
+        background-image:
+          radial-gradient(circle at 25% 25%, var(--page) 0.17rem, transparent 0.2rem),
+          radial-gradient(circle at 50% 50%, var(--page) 0.17rem, transparent 0.2rem),
+          radial-gradient(circle at 75% 75%, var(--page) 0.17rem, transparent 0.2rem);
+      }
+    }
+
+    .token {
+      position: absolute;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background: var(--foil);
+      border: 2px solid var(--gold-lo);
+
+      &.a {
+        left: 59%;
+        bottom: 0;
+      }
+
+      &.b {
+        left: 80%;
+        bottom: 1.4rem;
+      }
+    }
+  }
+
+  .actions {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+/* Development */
+.development {
+  margin: 20px;
+  padding: 0;
+}
+  /* @media only screen and (max-width: 600px) {
+    .spine.b1, .spine.b2, .spine.b5, .spine.b6 {
+      display: none;
+    }
+  } */
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+    }
+  }

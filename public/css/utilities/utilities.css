@@ -1,0 +1,1 @@
+/* utilities/ holds small, single-purpose helper classes like .visually-hidden or .text-center. They live in the last named layer so they win by layer order without needing !important. */
