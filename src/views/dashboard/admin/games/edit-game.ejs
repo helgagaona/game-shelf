@@ -1,0 +1,76 @@
+<%- include('../../../partials/header') %>
+<main>
+  <section class="form-card" aria-labelledby="game-title">
+    <h5>Admin · Games</h5>
+    <h2 id="game-title"><%= game.title %></h2>
+    <p>Change this game's details. Its web address (<%= game.id %>) stays the same.</p>
+
+    <form class="form" action="/admin/games/<%= game.id %>" method="post">
+
+      <div class="form-field">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" maxlength="100" required value="<%= game.title %>">
+      </div>
+
+      <div class="form-field">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" required><%= game.description %></textarea>
+        <p class="form-hint">A sentence or two about the game.</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="players">Players</label>
+          <input type="text" id="players" name="players" maxlength="30" placeholder="2–4 players" required value="<%= game.players %>">
+        </div>
+
+        <div class="form-field">
+          <label for="play_time">Play time</label>
+          <input type="text" id="play_time" name="play_time" maxlength="30" placeholder="30–60 minutes" required value="<%= game.playTime %>">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty" name="difficulty" required>
+            <option value="Beginner" <%= game.difficulty === 'Beginner' ? 'selected' : '' %>>Beginner</option>
+            <option value="Intermediate" <%= game.difficulty === 'Intermediate' ? 'selected' : '' %>>Intermediate</option>
+            <option value="Advanced" <%= game.difficulty === 'Advanced' ? 'selected' : '' %>>Advanced</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="category_id">Category</label>
+          <select id="category_id" name="category_id" required>
+            <% categories.forEach(category => { %>
+              <option value="<%= category.id %>" <%= category.id === game.categoryId ? 'selected' : '' %>><%= category.name %></option>
+            <% }); %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="image">Image path</label>
+        <input type="text" id="image" name="image" maxlength="255" placeholder="/images/games/uno.png" required value="<%= game.image %>">
+        <p class="form-hint">The picture's location inside public/, for example /images/games/uno.png.</p>
+      </div>
+
+      <div class="form-field">
+        <div class="form-check">
+          <input type="checkbox" id="is_active" name="is_active" value="true" <%= game.isActive ? 'checked' : '' %>>
+          <label for="is_active">Active (shown in the catalog)</label>
+        </div>
+        <p class="form-hint">Uncheck to hide the game instead of deleting it.</p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="primary-btn">Save game</button>
+        <a class="secondary-btn" href="/admin/games">Cancel</a>
+      </div>
+    </form>
+  </section>
+</main>
+<%- include('../../../partials/footer') %>
+</body>
+</html>

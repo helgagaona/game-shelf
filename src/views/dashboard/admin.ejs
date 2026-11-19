@@ -1,0 +1,77 @@
+<%- include('../partials/header') %>
+<main>
+
+  <!-- Profile -->
+  <section class="dashboard-profile" aria-labelledby="profile-title">
+    <!-- Swap for <img class="profile-avatar" src="..." alt="..." width="96" height="96"> when there is a photo -->
+    <span class="profile-avatar profile-avatar--initials" role="img" aria-label="Profile initials">A</span>
+    <div class="profile-details">
+      <h5>Admin dashboard</h5>
+      <h2 id="profile-title">Admin Name</h2>
+      <p><span class="profile-role">Admin</span></p>
+      <p class="profile-email">admin@example.com</p>
+    </div>
+    <div class="actions">
+      <a class="secondary-btn" href="/games">View catalog</a>
+    </div>
+  </section>
+
+  <!-- Summary numbers -->
+  <section aria-labelledby="summary-title">
+    <h2 id="summary-title">At a glance</h2>
+    <dl class="dashboard-stats">
+      <div class="stat"><dt>Pending requests</dt><dd>0</dd></div>
+      <div class="stat"><dt>Active loans</dt><dd>0</dd></div>
+      <div class="stat"><dt>Overdue</dt><dd>0</dd></div>
+      <div class="stat"><dt>Copies available</dt><dd>0 / 0</dd></div>
+      <div class="stat"><dt>Open damage reports</dt><dd>0</dd></div>
+    </dl>
+  </section>
+
+  <!-- Needs attention -->
+  <section aria-labelledby="attention-title">
+    <h2 id="attention-title">Needs your attention</h2>
+    <div class="dashboard-panels">
+
+      <article class="panel" aria-labelledby="pending-title">
+        <h3 id="pending-title">Pending requests</h3>
+        <p class="empty-state">No pending requests.</p>
+        <a class="link" href="/loans?status=pending">See all pending</a>
+      </article>
+
+      <article class="panel" aria-labelledby="overdue-title">
+        <h3 id="overdue-title">Overdue loans</h3>
+        <p class="empty-state">Nothing is overdue.</p>
+        <a class="link" href="/loans?status=overdue">See all overdue</a>
+      </article>
+
+      <article class="panel" aria-labelledby="damage-title">
+        <h3 id="damage-title">Open damage reports</h3>
+        <p class="empty-state">No open damage reports.</p>
+        <a class="link" href="/damage-reports">See all reports</a>
+      </article>
+
+      <article class="panel" aria-labelledby="activity-title">
+        <h3 id="activity-title">Recent activity</h3>
+        <p class="empty-state">No recent activity.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Manage -->
+  <section aria-labelledby="manage-title">
+    <h2 id="manage-title">Manage</h2>
+    <ul class="dashboard-links">
+      <li><a class="link" href="/admin/games">Games</a></li>
+      <li><a class="link" href="/admin/categories">Categories</a></li>
+      <li><a class="link" href="/admin/users">Users</a></li>
+      <li><a class="link" href="/loans">All loans</a></li>
+      <li><a class="link" href="/damage-reports">Damage reports</a></li>
+    </ul>
+  </section>
+
+</main>
+<%- include('../partials/footer') %>
+</body>
+</html>

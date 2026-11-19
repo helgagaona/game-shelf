@@ -1,0 +1,143 @@
+/* components/tables.css: list pages (title bar, data table, status badge, row actions).
+   Reusable for categories, games, users and loans. Built only from tokens. */
+
+/* Title bar: heading on the left, "Add" button on the right */
+.list-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4) var(--space-6);
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin: var(--space-2) 0 0;
+    }
+}
+
+/* Scrolls sideways inside itself on narrow screens instead of breaking the page */
+.table-wrap {
+    overflow-x: auto;
+    margin-top: var(--space-6);
+    background: var(--panel-bg);
+    border: var(--border-width) solid var(--panel-border);
+    border-radius: var(--radius-control);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    th,
+    td {
+        padding: var(--space-4) var(--space-5);
+        border-bottom: var(--border-width) solid var(--panel-border);
+        vertical-align: middle;
+    }
+
+    th {
+        color: var(--gold);
+        font-size: var(--font-size-label);
+        font-weight: 400;
+        letter-spacing: var(--letter-spacing-label);
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: 0;
+    }
+
+    tbody tr:hover {
+        background: var(--gold-wash);
+    }
+
+    td {
+        font-size: var(--font-size-label);
+    }
+
+    /* First column is the item's name */
+    td:first-child {
+        font-family: var(--display);
+        font-size: var(--font-size-card-title);
+        color: var(--gold-hi);
+    }
+
+    .col-number {
+        text-align: right;
+    }
+}
+
+/* Small picture next to a name, e.g. a game's box art */
+.cell-game {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.table-thumb {
+    flex: 0 0 auto;
+    width: var(--size-thumb);
+    height: var(--size-thumb);
+    object-fit: contain;
+}
+
+/* Active / Inactive label */
+.status-badge {
+    --status-color: var(--status-active);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    border: var(--border-width) solid var(--status-color);
+    border-radius: var(--all-radius);
+    color: var(--ink);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--letter-spacing-label);
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &::before {
+        content: "";
+        width: var(--size-role-dot);
+        height: var(--size-role-dot);
+        border-radius: 50%;
+        background: var(--status-color);
+    }
+}
+
+.status-badge--inactive {
+    --status-color: var(--status-inactive);
+}
+
+/* Edit link + one-button forms (Deactivate / Activate) side by side */
+.row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+
+    form {
+        margin: 0;
+    }
+
+    /* A <button> that looks like a text link */
+    .link-btn {
+        padding: 0;
+        background: none;
+        border: 0;
+        color: var(--gold-hi);
+        font: inherit;
+        cursor: pointer;
+        transition: color var(--transition-control);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--ink);
+        }
+    }
+}

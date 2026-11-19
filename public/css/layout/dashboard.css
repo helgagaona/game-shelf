@@ -1,0 +1,57 @@
+/* layout/dashboard.css: how the admin dashboard sections are arranged.
+   Structure only. The look of avatars, stat cards and panels lives in components/dashboard.css. */
+
+/* Profile: avatar | name, role, email | actions */
+.dashboard-profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-6);
+
+    .profile-details {
+        flex: 1 1 16rem;
+        min-width: 0;
+
+        h5 {
+            margin: 0 0 var(--space-2);
+        }
+
+        h2 {
+            margin: 0 0 var(--space-2);
+        }
+
+        p {
+            margin: var(--space-1) 0 0;
+        }
+    }
+
+    .actions {
+        margin-left: auto;
+    }
+}
+
+/* Row of summary numbers */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--layout-stat-min)), 1fr));
+    gap: var(--space-4);
+    margin: 0;
+}
+
+/* "Needs your attention" panels: as many columns as fit, equal heights per row */
+.dashboard-panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--layout-panel-min)), 1fr));
+    gap: var(--space-6);
+    align-items: stretch;
+}
+
+/* Manage shortcuts */
+.dashboard-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--layout-stat-min)), 1fr));
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

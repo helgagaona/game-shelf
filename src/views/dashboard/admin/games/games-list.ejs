@@ -1,0 +1,63 @@
+<%- include('../../../partials/header') %>
+<main>
+  <section aria-labelledby="games-title">
+
+    <div class="list-header">
+      <div>
+        <h5>Admin</h5>
+        <h2 id="games-title">Games</h2>
+        <p>Manage the catalog. Hide a game instead of deleting it.</p>
+      </div>
+      <div class="actions">
+        <a class="primary-btn" href="/admin/games/add-game">Add game</a>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table" aria-label="Games">
+        <thead>
+          <tr>
+            <th scope="col">Game</th>
+            <th scope="col">Category</th>
+            <th scope="col">Difficulty</th>
+            <th scope="col">Players</th>
+            <th scope="col">Play time</th>
+            <th scope="col" class="col-number">Copies available</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% games.forEach(game => { %>
+          <tr>
+            <td>
+              <div class="cell-game">
+                <img class="table-thumb" src="<%= game.image %>" alt="">
+                <span><%= game.title %></span>
+              </div>
+            </td>
+            <td><%= game.category %><% if (!game.categoryActive) { %> (category hidden)<% } %></td>
+            <td><%= game.difficulty %></td>
+            <td><%= game.players %></td>
+            <td><%= game.playTime %></td>
+            <td class="col-number"><%= game.availableCount %> / <%= game.copyCount %></td>
+            <td><span class="status-badge <%= game.isActive ? '' : 'status-badge--inactive' %>"><%= game.isActive ? 'Active' : 'Inactive' %></span></td>
+            <td>
+              <div class="row-actions">
+                <a class="link" href="/admin/games/<%= game.id %>/edit">Edit</a>
+                <form action="/admin/games/<%= game.id %>/<%= game.isActive ? 'deactivate' : 'activate' %>" method="post">
+                  <button type="submit" class="link-btn"><%= game.isActive ? 'Deactivate' : 'Activate' %></button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+</main>
+<%- include('../../../partials/footer') %>
+</body>
+</html>

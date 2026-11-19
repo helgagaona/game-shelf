@@ -14,12 +14,15 @@
 @import url('layout/home.css') layer(layout);
 @import url('layout/errors.css') layer(layout);
 @import url('layout/games-catalog.css') layer(layout);
+@import url('layout/dashboard.css') layer(layout);
 
 /* Components */
 @import url('components/navigation.css') layer(components);
 @import url('components/buttons.css') layer(components);
 @import url('components/footer.css') layer(components);
-
+@import url('components/forms.css') layer(components);
+@import url('components/dashboard.css') layer(components);
+@import url('components/tables.css') layer(components);
 
 
 /* Utilities */

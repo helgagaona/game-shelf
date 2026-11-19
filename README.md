@@ -1,4 +1,8 @@
-### Deployment Journal:
+### Deployment Journal
+#### Week 10
+Connected the game catalog to PostgreSQL by creating seed.sql with the categories, board_games, and game_copies tables and replacing the in-memory game data with SQL queries. Built admin pages to list, add, edit, and activate or deactivate categories and games, and hid deactivated items from the public catalog. Added token-based CSS layouts for the admin, staff, and member dashboards, the login and registration forms, and data tables, and added routes to test the views.
+
+https://game-shelf-3tob.onrender.com
 
 #### Week 9
 Added EJS views and connected them to Express routes. Implemented query-parameter sorting for the game catalog and centralized error handling.
@@ -116,7 +120,6 @@ Reviews may be moderated before they become visible to the community.
 ### Public Pages
 
 - Home
-- Browse Games
 - Categories
 - Game Details
 - Login
@@ -145,9 +148,30 @@ Reviews may be moderated before they become visible to the community.
 - Create Game
 - Edit Game
 - Manage Categories
+- Create Category
+- Edit Cateogory
 - Manage Copies
 - Manage Users
 - Manage Reviews
+
+## Navigation
+
+- [Home](https://game-shelf-3tob.onrender.com/)
+- [Catalog](https://game-shelf-3tob.onrender.com/games)
+- [Game details](https://game-shelf-3tob.onrender.com/games/CATAN)
+- [Login](https://game-shelf-3tob.onrender.com/login)
+- [Registration](https://game-shelf-3tob.onrender.com/registration)
+- [Admin dashboard](https://game-shelf-3tob.onrender.com/admin)
+- [Staff dashboard](https://game-shelf-3tob.onrender.com/staff)
+- [Member dashboard](https://game-shelf-3tob.onrender.com/member)
+- [Manage categories](https://game-shelf-3tob.onrender.com/admin/categories)
+- [Add category](https://game-shelf-3tob.onrender.com/admin/categories/add-category)
+- [Edit category](https://game-shelf-3tob.onrender.com/admin/categories/1/edit)
+- [Manage games](https://game-shelf-3tob.onrender.com/admin/games)
+- [Add game](https://game-shelf-3tob.onrender.com/admin/games/add-game)
+- [Edit game](https://game-shelf-3tob.onrender.com/admin/games/CATAN/edit)
+- [500 error page](https://game-shelf-3tob.onrender.com/test-error)
+- [404 error page](https://game-shelf-3tob.onrender.com/page-that-does-not-exist)
 
 ## Data Model
 
@@ -302,4 +326,17 @@ Possible future features include:
 
 ## Project Status
 
-GameShelf is currently in the planning and requirements-definition stage. The next development milestone is to finalize the database model and entity-relationship diagram before beginning implementation.
+GameShelf is currently in early implementation. The Express and EJS foundation is in place and deployed on Render, the public catalog and game detail pages read from PostgreSQL, and administrators can add, edit, activate, and deactivate categories and games, with deactivated items hidden from the public catalog. Layouts for the admin, staff, and member dashboards, the login and registration forms, and the custom error pages are built, but the dashboards still show placeholder content and the forms are not yet connected to user accounts.
+
+The next step is to implement authentication and sessions, and then continue with the remaining EJS templates: the loan list, loan details, and return pages, the user management pages, the game copies page, the damage report pages, and the 403 access-denied page.
+
+The next development milestones are:
+
+- Implement registration, login, password hashing, and sessions
+- Finish the remaining EJS templates for loans, users, game copies, damage reports, and access denied
+- Add role-based authorization for member, staff, and admin routes
+- Build the loan request workflow with status history and the member loan pages
+- Add the staff tools for approvals, checkouts, returns, and damage reports
+- Add physical copy and user management for administrators
+- Connect the dashboards to live data
+- Add reviews, validation, and review moderation

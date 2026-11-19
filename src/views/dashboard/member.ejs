@@ -1,0 +1,78 @@
+<%- include('../partials/header') %>
+<main>
+
+  <!-- Profile -->
+  <section class="dashboard-profile" aria-labelledby="profile-title">
+    <!-- Swap for <img class="profile-avatar" src="..." alt="..." width="96" height="96"> when there is a photo -->
+    <span class="profile-avatar profile-avatar--initials" role="img" aria-label="Profile initials">M</span>
+    <div class="profile-details">
+      <h5>My dashboard</h5>
+      <h2 id="profile-title">Member Name</h2>
+      <p><span class="profile-role profile-role--member">Member</span></p>
+      <p class="profile-email">member@example.com</p>
+    </div>
+    <div class="actions">
+      <a class="primary-btn" href="/games">Browse the catalog</a>
+    </div>
+  </section>
+
+  <!-- My numbers -->
+  <section aria-labelledby="summary-title">
+    <h2 id="summary-title">My loans at a glance</h2>
+    <dl class="dashboard-stats">
+      <div class="stat"><dt>Borrowed now</dt><dd>0</dd></div>
+      <div class="stat"><dt>Awaiting approval</dt><dd>0</dd></div>
+      <div class="stat"><dt>Due soon</dt><dd>0</dd></div>
+      <div class="stat"><dt>Games borrowed</dt><dd>0</dd></div>
+    </dl>
+  </section>
+
+  <!-- My games: only this member's own loans -->
+  <section aria-labelledby="games-title">
+    <h2 id="games-title">My games</h2>
+    <div class="dashboard-panels">
+
+      <article class="panel" aria-labelledby="borrowed-title">
+        <h3 id="borrowed-title">Currently borrowed</h3>
+        <p class="panel-hint">Games you have right now and when to bring them back.</p>
+        <p class="empty-state">You have no games checked out.</p>
+        <a class="link" href="/loans?status=checked_out">See my borrowed games</a>
+      </article>
+
+      <article class="panel" aria-labelledby="pending-title">
+        <h3 id="pending-title">Pending requests</h3>
+        <p class="panel-hint">Waiting for staff or an admin to approve. You can cancel while a request is pending.</p>
+        <p class="empty-state">No requests waiting for approval.</p>
+        <a class="link" href="/loans?status=pending">See my pending requests</a>
+      </article>
+
+      <article class="panel" aria-labelledby="pickup-title">
+        <h3 id="pickup-title">Approved, ready to pick up</h3>
+        <p class="panel-hint">Approved requests you can collect at the library.</p>
+        <p class="empty-state">Nothing is ready for pickup.</p>
+        <a class="link" href="/loans?status=approved">See my approved requests</a>
+      </article>
+
+      <article class="panel" aria-labelledby="history-title">
+        <h3 id="history-title">Borrowing history</h3>
+        <p class="panel-hint">Games you have returned.</p>
+        <p class="empty-state">You haven't returned any games yet.</p>
+        <a class="link" href="/loans?status=returned">See my history</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Shortcuts -->
+  <section aria-labelledby="shortcuts-title">
+    <h2 id="shortcuts-title">Shortcuts</h2>
+    <ul class="dashboard-links">
+      <li><a class="link" href="/loans">All my loans and requests</a></li>
+      <li><a class="link" href="/games">Browse the catalog</a></li>
+    </ul>
+  </section>
+
+</main>
+<%- include('../partials/footer') %>
+</body>
+</html>

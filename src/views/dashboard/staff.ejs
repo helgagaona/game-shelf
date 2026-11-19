@@ -1,0 +1,80 @@
+<%- include('../partials/header') %>
+<main>
+
+  <!-- Profile -->
+  <section class="dashboard-profile" aria-labelledby="profile-title">
+    <!-- Swap for <img class="profile-avatar" src="..." alt="..." width="96" height="96"> when there is a photo -->
+    <span class="profile-avatar profile-avatar--initials" role="img" aria-label="Profile initials">S</span>
+    <div class="profile-details">
+      <h5>Staff dashboard</h5>
+      <h2 id="profile-title">Staff Name</h2>
+      <p><span class="profile-role profile-role--staff">Staff</span></p>
+      <p class="profile-email">staff@example.com</p>
+    </div>
+    <div class="actions">
+      <a class="primary-btn" href="/loans">All loans</a>
+    </div>
+  </section>
+
+  <!-- Today's numbers -->
+  <section aria-labelledby="summary-title">
+    <h2 id="summary-title">At the desk today</h2>
+    <dl class="dashboard-stats">
+      <div class="stat"><dt>Awaiting approval</dt><dd>0</dd></div>
+      <div class="stat"><dt>Ready for pickup</dt><dd>0</dd></div>
+      <div class="stat"><dt>Checked out</dt><dd>0</dd></div>
+      <div class="stat"><dt>Due today</dt><dd>0</dd></div>
+      <div class="stat"><dt>Overdue</dt><dd>0</dd></div>
+    </dl>
+  </section>
+
+  <!-- Work queue: the loan steps staff are responsible for -->
+  <section aria-labelledby="queue-title">
+    <h2 id="queue-title">Work queue</h2>
+    <div class="dashboard-panels">
+
+      <article class="panel" aria-labelledby="approve-title">
+        <h3 id="approve-title">Requests to approve</h3>
+        <p class="panel-hint">New requests waiting for a decision.</p>
+        <p class="empty-state">No requests waiting.</p>
+        <a class="link" href="/loans?status=pending">Review all pending</a>
+      </article>
+
+      <article class="panel" aria-labelledby="pickup-title">
+        <h3 id="pickup-title">Ready for pickup</h3>
+        <p class="panel-hint">Approved loans to check out when the member arrives.</p>
+        <p class="empty-state">Nothing waiting for pickup.</p>
+        <a class="link" href="/loans?status=approved">See all approved</a>
+      </article>
+
+      <article class="panel" aria-labelledby="returns-title">
+        <h3 id="returns-title">Returns due</h3>
+        <p class="panel-hint">Mark a loan returned and leave a note on the game's condition.</p>
+        <p class="empty-state">No returns due today.</p>
+        <a class="link" href="/loans?status=checked_out">See all checked out</a>
+      </article>
+
+      <article class="panel" aria-labelledby="damage-title">
+        <h3 id="damage-title">Damage reports</h3>
+        <p class="panel-hint">Games that came back damaged or incomplete.</p>
+        <p class="empty-state">No open damage reports.</p>
+        <a class="link" href="/damage-reports">See all reports</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Shortcuts -->
+  <section aria-labelledby="shortcuts-title">
+    <h2 id="shortcuts-title">Shortcuts</h2>
+    <ul class="dashboard-links">
+      <li><a class="link" href="/loans">All loans</a></li>
+      <li><a class="link" href="/damage-reports">Damage reports</a></li>
+      <li><a class="link" href="/games">Catalog</a></li>
+    </ul>
+  </section>
+
+</main>
+<%- include('../partials/footer') %>
+</body>
+</html>

@@ -16,6 +16,21 @@
     --moss: #4a3a7a;
     --card: #1d1230;
     --accent: #8553ba;
+
+    /* Form semantics */
+    --field-bg: var(--oak);
+    --field-border: var(--rule);
+    --field-focus: var(--gold);
+    --error: #f08ca4;
+
+    /* Dashboard semantics */
+    --panel-bg: var(--card);
+    --panel-border: var(--rule);
+    --role-admin: var(--gold-hi);
+    --role-staff: var(--accent);
+    --role-member: var(--gold);
+    --status-active: var(--gold);
+    --status-inactive: var(--moss);
     --foil: linear-gradient(135deg, var(--gold-hi), var(--gold) 45%, var(--gold-lo)); /* use color transparent, background-clip: text and background: --foil */
 
     --display: "IM Fell English", "Palatino Linotype", Georgia, serif;
